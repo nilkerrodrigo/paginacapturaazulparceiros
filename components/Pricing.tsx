@@ -45,7 +45,7 @@ const ContactForm: React.FC = () => {
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand rounded-full blur-[80px] opacity-40"></div>
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-600 rounded-full blur-[80px] opacity-30"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 relative z-10 items-center">
              
              {/* Text Side */}
              <div className="lg:col-span-2 text-white">
