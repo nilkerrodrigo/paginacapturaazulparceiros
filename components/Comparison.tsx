@@ -11,13 +11,13 @@ const Comparison: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           
-          {/* Left: Text Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+          {/* Left: Text Content (Order 2 on Mobile, 1 on Desktop) */}
+          <div className="order-2 lg:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 [text-wrap:balance]">
               Sem a <span className="text-red-500">Azul 360º Parceiros</span>
             </h2>
             
@@ -27,20 +27,20 @@ const Comparison: React.FC = () => {
                   <div className="mt-1 flex-shrink-0 w-5 h-5 bg-red-100 rounded-full flex items-center justify-center text-red-600">
                     <X size={14} strokeWidth={3} />
                   </div>
-                  <p className="text-slate-600 leading-relaxed">{point}</p>
+                  <p className="text-slate-600 leading-relaxed [text-wrap:balance]">{point}</p>
                 </div>
               ))}
             </div>
 
-            <div className="p-4 bg-red-50 rounded-xl border border-red-100 inline-block">
-              <p className="text-sm text-red-800 font-medium">
+            <div className="p-4 bg-red-50 rounded-xl border border-red-100 inline-block w-full md:w-auto">
+              <p className="text-sm text-red-800 font-medium [text-wrap:balance]">
                 <span className="font-bold">Resultado:</span> menos aprovações, mais estresse e perda de negócios.
               </p>
             </div>
           </div>
 
-          {/* Right: Visual (Spreadsheet simulation) */}
-          <div className="relative">
+          {/* Right: Visual (Spreadsheet simulation) (Order 1 on Mobile, 2 on Desktop) */}
+          <div className="relative order-1 lg:order-2">
              <div className="absolute -inset-4 bg-slate-100 rounded-3xl transform rotate-2"></div>
              <div className="relative bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
                 {/* Header of fake app */}
@@ -82,8 +82,8 @@ const Comparison: React.FC = () => {
                 </div>
                 
                 {/* Overlay Alert */}
-                <div className="absolute bottom-4 right-4 bg-white shadow-lg border border-red-100 p-3 rounded-lg flex items-center gap-3 animate-bounce">
-                   <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500">
+                <div className="absolute bottom-4 right-4 bg-white shadow-lg border border-red-100 p-3 rounded-lg flex items-center gap-3 animate-bounce max-w-[80%] md:max-w-none">
+                   <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 shrink-0">
                       <X size={16} />
                    </div>
                    <div>

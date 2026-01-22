@@ -36,21 +36,21 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-white" id="contato">
+    <section className="py-12 md:py-24 bg-white" id="contato">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 shadow-2xl relative overflow-hidden">
+        <div className="bg-slate-900 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-16 shadow-2xl relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-slate-800 to-transparent opacity-50 pointer-events-none"></div>
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand rounded-full blur-[80px] opacity-40"></div>
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-600 rounded-full blur-[80px] opacity-30"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 relative z-10">
              
              {/* Text Side */}
              <div className="lg:col-span-2 text-white">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar sua operação?</h2>
-                <p className="text-slate-300 mb-8 leading-relaxed">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 [text-wrap:balance]">Pronto para transformar sua operação?</h2>
+                <p className="text-slate-300 text-sm md:text-base mb-8 leading-relaxed [text-wrap:balance]">
                   Preencha o formulário e nossa equipe entrará em contato para liberar seu acesso à Azul 360º Parceiros.
                 </p>
                 <ul className="space-y-4">
@@ -61,7 +61,7 @@ const ContactForm: React.FC = () => {
                       "Sem mensalidade fixa"
                    ].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm font-medium text-slate-200">
-                         <CheckCircle2 size={18} className="text-brand-light" />
+                         <CheckCircle2 size={18} className="text-brand-light flex-shrink-0" />
                          {item}
                       </li>
                    ))}
