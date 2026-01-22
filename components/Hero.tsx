@@ -20,9 +20,9 @@ const Hero: React.FC = () => {
         
         {/* 
             Inner Clipper Card:
-            - Adjusted min-height for mobile (min-h-[600px]) vs desktop (min-h-[850px]).
+            - Adjusted min-height for mobile to bring elements closer (min-h-[550px]).
         */}
-        <div className="relative w-full rounded-[2rem] md:rounded-[2.5rem] shadow-2xl bg-[#1053f1] min-h-[600px] md:min-h-[850px] overflow-hidden flex flex-col">
+        <div className="relative w-full rounded-[2rem] md:rounded-[2.5rem] shadow-2xl bg-[#1053f1] min-h-[550px] md:min-h-[850px] overflow-hidden flex flex-col">
             
             {/* Background Image Layer */}
             <div className="absolute inset-0 w-full h-full z-0">
@@ -36,25 +36,25 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Content Layer */}
-            <div className="relative z-10 flex flex-col items-center text-center pt-20 px-4 md:pt-36 flex-1">
+            <div className="relative z-10 flex flex-col items-center text-center pt-16 px-4 md:pt-36 flex-1">
               
-              {/* Text Content Wrapper */}
-              <div className="max-w-5xl mx-auto mb-8">
+              {/* Text Content Wrapper - Reduced bottom margin on mobile */}
+              <div className="max-w-5xl mx-auto mb-2 md:mb-8">
                 
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full text-xs md:text-sm mb-6 md:mb-8 shadow-xl cursor-default hover:bg-white/20 transition-colors">
+                {/* Badge - Reduced margin */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-2.5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-full text-xs md:text-sm mb-4 md:mb-8 shadow-xl cursor-default hover:bg-white/20 transition-colors">
                   <Star size={14} className="text-yellow-400 fill-yellow-400 md:w-4 md:h-4" />
                   <span>Gestão, Segurança e Tecnologia</span>
                 </div>
 
-                {/* Headline */}
-                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-6 md:mb-8 leading-tight drop-shadow-lg font-heading">
-                  O sistema que entende<br className="hidden md:block" />
+                {/* Headline - Fixed spacing and text */}
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight mb-4 md:mb-8 leading-tight drop-shadow-lg font-heading">
+                  O sistema que entende <br className="hidden md:block" />
                   a rotina de quem <span className="text-cyan-300">aprova</span>.
                 </h1>
                 
-                {/* Paragraph */}
-                <p className="text-base md:text-xl text-blue-50 mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-md px-2">
+                {/* Paragraph - Reduced margin */}
+                <p className="text-base md:text-xl text-blue-50 mb-6 md:mb-10 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-md px-2">
                   A plataforma que profissionaliza sua operação de crédito. Mesa especializada, diagnóstico inteligente e serviços integrados em um só lugar.
                 </p>
 
@@ -86,8 +86,7 @@ const Hero: React.FC = () => {
 
               {/* 
                  Large Dashboard Image
-                 - Adjusted translate-y for mobile (translate-y-10) vs desktop (translate-y-20)
-                 - This ensures the image isn't pushed too far down on small screens.
+                 - mt-auto pushes it to bottom, but since we reduced min-height, it sits closer to buttons.
               */}
               <div className="w-full max-w-[95%] md:max-w-[1400px] mx-auto mt-auto translate-y-10 md:translate-y-20">
                   <img 
@@ -102,9 +101,6 @@ const Hero: React.FC = () => {
 
         {/* 
             Section Break Icon 
-            - Adjusted size and position for mobile to be smaller and proportional.
-            - -bottom-6 on mobile, -bottom-10 on desktop.
-            - w-12 h-12 on mobile, w-16 h-16 on desktop.
         */}
         <div className="absolute -bottom-6 md:-bottom-10 left-1/2 transform -translate-x-1/2 z-20">
           <div className="bg-white p-2 md:p-2.5 rounded-full shadow-lg">
