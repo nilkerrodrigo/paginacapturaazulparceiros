@@ -10,16 +10,17 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="bg-white w-full py-4">
+    <section className="bg-white w-full py-4 pb-16">
       {/* 
           Container "Card"
           - Layout: flex flex-col to allow pushing content to bottom.
-          - min-h increased to 850px to ensure vertical breathing room.
+          - Removed overflow-hidden from main container to allow the circle icon to protrude.
+          - Added relative to position the circle.
       */}
-      <div className="mx-auto w-[98%] max-w-[1920px] relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-[#1053f1] min-h-[850px] flex flex-col">
+      <div className="mx-auto w-[98%] max-w-[1920px] relative rounded-[2.5rem] shadow-2xl bg-[#1053f1] min-h-[850px] flex flex-col z-0">
         
-        {/* Background Image Layer */}
-        <div className="absolute inset-0 w-full h-full z-0">
+        {/* Background Image Layer - Applied overflow-hidden here to clip the background image but not the icon */}
+        <div className="absolute inset-0 w-full h-full z-[-1] rounded-[2.5rem] overflow-hidden">
            <img 
              src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/ChatGPT-Image-22-de-jan.png" 
              alt="Background"
@@ -64,9 +65,9 @@ const Hero: React.FC = () => {
               
               <div className="flex items-center gap-3 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 transition-colors hover:bg-black/30">
                  <div className="flex -space-x-3">
-                    <img src="https://i.pravatar.cc/100?img=12" className="w-10 h-10 rounded-full border-2 border-white" alt="User" />
-                    <img src="https://i.pravatar.cc/100?img=33" className="w-10 h-10 rounded-full border-2 border-white" alt="User" />
-                    <img src="https://i.pravatar.cc/100?img=57" className="w-10 h-10 rounded-full border-2 border-white" alt="User" />
+                    <img src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/Face-2.jpeg" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Parceiro 1" />
+                    <img src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/Face-1.jpeg" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Parceiro 2" />
+                    <img src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/Face.jpeg" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Parceiro 3" />
                  </div>
                  <div className="text-left">
                     <div className="flex text-yellow-400">
@@ -91,6 +92,19 @@ const Hero: React.FC = () => {
               />
           </div>
 
+        </div>
+
+        {/* Section Break Icon */}
+        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-white p-2.5 rounded-full shadow-lg">
+             <div className="w-16 h-16 bg-[#1053f1] rounded-full flex items-center justify-center border-4 border-[#1053f1]">
+                <img 
+                  src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/icon-azul-parceiros.png" 
+                  alt="Icon" 
+                  className="w-8 h-8 object-contain"
+                />
+             </div>
+          </div>
         </div>
 
       </div>
