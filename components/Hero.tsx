@@ -82,9 +82,9 @@ const Hero: React.FC = () => {
           {/* 
              Large Dashboard Image
              - mt-auto: Pushes the image to the very bottom of the flex container.
-             - translate-y-1: Ensures it sits flush or slightly clipped at the bottom for a grounded look.
+             - translate-y-6: Increased vertical translation (approx 24px) to push the image further down/cut it off slightly at the bottom.
           */}
-          <div className="w-full max-w-[95%] md:max-w-[1400px] mx-auto mt-auto translate-y-1">
+          <div className="w-full max-w-[95%] md:max-w-[1400px] mx-auto mt-auto translate-y-6">
               <img 
                 src="http://azul360parceiros.com.br/wp-content/uploads/2026/01/imagem-1-azul-parceiros.png" 
                 alt="Preview da Plataforma"
