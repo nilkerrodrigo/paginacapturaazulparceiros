@@ -9,10 +9,11 @@ const ContactForm: React.FC = () => {
     cnpj: '',
     atuacao: '',
     experiencia: '',
-    faturamento: ''
+    faturamento: '',
+    objetivo: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -28,7 +29,8 @@ const ContactForm: React.FC = () => {
       `*Tem CNPJ?:* ${formData.cnpj === 'sim' ? 'Sim' : 'Não'}\n` +
       `*Área de Atuação:* ${formData.atuacao}\n` +
       `*Já trabalha com crédito?:* ${formData.experiencia === 'sim' ? 'Sim' : 'Não'}\n` +
-      `*Faturamento Mensal:* ${formData.faturamento}`;
+      `*Faturamento Mensal:* ${formData.faturamento}\n` +
+      `*Objetivo:* ${formData.objetivo}`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
@@ -174,6 +176,19 @@ const ContactForm: React.FC = () => {
                         onChange={handleChange}
                       />
                     </div>
+                  </div>
+
+                  {/* Objetivo */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">Qual o seu objetivo?</label>
+                    <textarea 
+                      required
+                      name="objetivo"
+                      rows={3}
+                      className="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all resize-none"
+                      placeholder="Descreva brevemente seu objetivo..."
+                      onChange={handleChange}
+                    />
                   </div>
 
                   <button type="submit" className="w-full py-4 bg-brand text-white font-bold rounded-xl text-lg shadow-lg shadow-brand/20 hover:bg-brand-dark transition-all mt-2 flex items-center justify-center gap-2 transform hover:-translate-y-0.5">

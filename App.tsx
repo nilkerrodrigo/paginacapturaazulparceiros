@@ -1,9 +1,13 @@
+
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Comparison from './components/Comparison'; // Repurposed as Challenges
-import Features from './components/Features'; // Repurposed as Solutions
-import Pricing from './components/Pricing'; // Repurposed as Contact Form
+import Comparison from './components/Comparison';
+import Features from './components/Features';
+// import Assistant from './components/Assistant';
+// import Testimonials from './components/Testimonials';
+import Pricing from './components/Pricing';
+// import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -14,6 +18,9 @@ const App: React.FC = () => {
         <Hero />
         <Comparison />
         <Features />
+        {/* <Assistant /> */}
+        {/* <Testimonials /> */}
+        {/* <FAQ /> */}
         <Pricing />
       </main>
       <Footer />

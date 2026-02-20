@@ -1,77 +1,83 @@
+
 import React from 'react';
-import { MessageCircle, Clock, Users, ArrowDown } from 'lucide-react';
+import { MessageCircle, Clock, Users, Zap, Bot } from 'lucide-react';
 
 const Assistant: React.FC = () => {
   return (
-    <section className="py-20 bg-brand-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <section className="py-24 bg-brand-50 relative overflow-hidden">
+      {/* Abstract Background Shapes */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand rounded-full blur-[120px]"></div>
+         <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-cyan-400 rounded-full blur-[100px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left: The Avatar/Visual */}
-          <div className="lg:col-span-5 relative min-h-[400px]">
-             <div className="bg-brand rounded-[2rem] p-6 text-center text-white relative z-10 h-full flex flex-col justify-end overflow-hidden shadow-2xl">
-                {/* Simulated 3D Avatar Area */}
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-400 to-brand flex items-center justify-center">
-                    <img src="https://picsum.photos/400/600?grayscale&blur=2" className="opacity-20 absolute w-full h-full object-cover" />
-                    <div className="relative z-10 bg-white/10 p-4 rounded-full backdrop-blur-md border border-white/20">
-                       <MessageCircle size={64} className="text-white" />
+          {/* Left: The Visual Card */}
+          <div className="lg:col-span-5">
+             <div className="bg-brand rounded-[3rem] p-8 text-white relative h-[500px] flex flex-col justify-between overflow-hidden shadow-2xl group border border-white/20">
+                {/* Visual Header */}
+                <div className="absolute inset-0 bg-gradient-to-b from-brand to-brand-900 opacity-90"></div>
+                
+                <div className="relative z-10 flex flex-col items-center justify-center flex-1">
+                    <div className="relative">
+                        <div className="absolute -inset-4 bg-white/20 rounded-full blur-xl animate-pulse"></div>
+                        <div className="relative bg-white/10 p-8 rounded-full backdrop-blur-xl border border-white/20">
+                           <Bot size={80} className="text-white" />
+                        </div>
+                    </div>
+                    <div className="mt-8 text-center">
+                        <span className="px-4 py-1.5 bg-green-500 text-white text-xs font-black rounded-full uppercase tracking-tighter animate-bounce inline-block mb-2">IA Ativa</span>
+                        <h4 className="text-3xl font-black">Conheça a Lua</h4>
                     </div>
                 </div>
                 
-                <div className="relative z-20 bg-black/20 backdrop-blur-md p-4 rounded-xl border border-white/10 mt-auto mb-8 mx-4">
-                   <div className="flex items-center gap-2 mb-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-xs font-bold uppercase tracking-wider">Assistente Lua no WhatsApp</span>
+                <div className="relative z-20 bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 mb-4 mx-2 transform group-hover:translate-y-[-5px] transition-transform">
+                   <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 bg-brand-light rounded-full flex items-center justify-center">
+                         <MessageCircle size={20} className="text-brand" />
+                      </div>
+                      <span className="text-sm font-bold uppercase tracking-widest text-blue-100">Inteligência Artificial</span>
                    </div>
-                   <p className="text-sm text-left">
-                     "Olá! Gostaria de confirmar sua sessão de amanhã às 14h?"
+                   <p className="text-base font-medium italic leading-relaxed">
+                     "Parceiro, identifiquei um cliente com alto potencial de aprovação. Deseja que eu envie o diagnóstico completo agora?"
                    </p>
-                </div>
-                
-                <div className="text-left p-4">
-                   <h3 className="text-2xl font-bold leading-tight">Mais que uma assistente. <br/><span className="text-blue-200">Uma parceira no seu consultório.</span></h3>
                 </div>
              </div>
           </div>
 
-          {/* Right: The Grid of Benefits */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
-             {/* Main Info */}
-             <div className="bg-white p-8 rounded-3xl md:col-span-2">
-                <h3 className="text-3xl font-bold text-slate-900 mb-2">Sobre a <span className="text-brand">Lua</span></h3>
-                <p className="text-slate-600 mb-6">A Lua agenda, confirma e envia lembretes no WhatsApp.</p>
-                <p className="text-sm text-slate-500">
-                  Você foca no cuidado com seus pacientes; ela garante organização, pontualidade e uma experiência acolhedora.
-                </p>
+          {/* Right: Benefits Grid */}
+          <div className="lg:col-span-7 space-y-8">
+             <div>
+                <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">A primeira IA <span className="text-brand underline decoration-cyan-400 underline-offset-8">especialista</span> em crédito.</h3>
+                <p className="text-xl text-slate-600 font-medium">A Lua não é apenas um chat, é o cérebro da sua operação rodando 24 horas por dia.</p>
              </div>
 
-             {/* Benefit 1 */}
-             <div className="bg-white p-6 rounded-3xl hover:shadow-lg transition-shadow border border-slate-50">
-                <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-4 text-purple-600">
-                   <ArrowDown size={20} />
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                   <div className="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 text-brand">
+                      <Zap size={28} />
+                   </div>
+                   <h4 className="text-xl font-bold text-slate-900 mb-3">Velocidade Máxima</h4>
+                   <p className="text-slate-600 leading-relaxed">Respostas instantâneas e diagnósticos automatizados que economizam horas do seu dia.</p>
                 </div>
-                <h4 className="font-bold text-slate-800 mb-2">Menos faltas</h4>
-                <p className="text-xs text-slate-500">Confirmações automáticas e lembretes inteligentes reduzem furos na agenda.</p>
-             </div>
 
-             {/* Benefit 2 */}
-             <div className="bg-white p-6 rounded-3xl hover:shadow-lg transition-shadow border border-slate-50">
-                <div className="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center mb-4 text-brand">
-                   <Clock size={20} />
+                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                   <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
+                      <Clock size={28} />
+                   </div>
+                   <h4 className="text-xl font-bold text-slate-900 mb-3">Sempre Online</h4>
+                   <p className="text-slate-600 leading-relaxed">Sua mesa de crédito nunca fecha. A Lua atende seus clientes mesmo quando você está descansando.</p>
                 </div>
-                <h4 className="font-bold text-slate-800 mb-2">Disponível 24/7</h4>
-                <p className="text-xs text-slate-500">Ela atende os seus pedidos com prontidão independente do dia ou hora.</p>
-             </div>
 
-             {/* Benefit 3 */}
-             <div className="bg-white p-6 rounded-3xl hover:shadow-lg transition-shadow border border-slate-50 md:col-span-2">
-                <div className="flex items-start gap-4">
-                   <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
-                      <Users size={20} />
+                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 md:col-span-2 flex flex-col md:flex-row items-center gap-8">
+                   <div className="w-20 h-20 bg-cyan-50 rounded-3xl flex items-center justify-center text-cyan-600 shrink-0">
+                      <Users size={36} />
                    </div>
                    <div>
-                      <h4 className="font-bold text-slate-800 mb-2">Pacientes</h4>
-                      <p className="text-xs text-slate-500">Registre novos pacientes e acompanhe os dados de cada um de forma organizada, tudo através da conversa com a Lua.</p>
+                      <h4 className="text-xl font-bold text-slate-900 mb-2">Conversão Inteligente</h4>
+                      <p className="text-slate-600 leading-relaxed">A Lua qualifica cada lead, identificando quem tem real potencial de fechar negócio, evitando que você perca tempo com perfis inválidos.</p>
                    </div>
                 </div>
              </div>

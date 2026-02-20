@@ -1,62 +1,70 @@
+
 import React from 'react';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      text: "O que mais me chamou atenção no ProntuPsi foi a praticidade. Em poucos cliques já consigo acessar todo o histórico dos meus pacientes. É nítido que foi desenvolvido pensando no psicólogo.",
-      author: "Gabriella Cabral",
-      role: "Psicóloga - CRP 01/25997",
-      image: "https://picsum.photos/100/100?random=20",
+      text: "A Azul 360º mudou o patamar da minha consultoria. Antes eu sofria para aprovar casos complexos, hoje tenho uma mesa técnica que joga junto comigo e as aprovações dispararam.",
+      author: "Ricardo Mendes",
+      role: "Correspondente Bancário - SP",
+      image: "https://i.pravatar.cc/150?u=ricardo",
       featured: true,
     },
     {
-      text: "Sempre me preocupei com a segurança dos prontuários. Saber que o ProntuPsi segue todas as normas de proteção de dados me dá tranquilidade. Além disso, a plataforma é muito intuitiva.",
-      author: "Sara Heloiza",
-      role: "Psicóloga - CRP 01/29701",
-      image: "https://picsum.photos/100/100?random=21",
+      text: "O diagnóstico de IA é simplesmente surreal. Consigo dar uma resposta profissional para o meu cliente em minutos, com base em dados reais. É tecnologia de banco grande na mão do parceiro.",
+      author: "Juliana Santos",
+      role: "Consultora Financeira - RJ",
+      image: "https://i.pravatar.cc/150?u=juliana",
       featured: false,
     },
     {
-      text: "Sempre tive dificuldade em manter meus atendimentos organizados. Desde que comecei a usar o ProntuPsi, consigo centralizar tudo em um só lugar. Minha agenda, meus pacientes e até a parte financeira.",
-      author: "Ester Muniz",
-      role: "Psicóloga - CRP 01/28951",
-      image: "https://picsum.photos/100/100?random=22",
+      text: "O suporte é o grande diferencial. Sempre que tenho dúvida em algum produto ou processo, a equipe da Azul me atende com uma agilidade que nunca vi em outra plataforma.",
+      author: "Marcos Oliveira",
+      role: "Escritório de Crédito - BH",
+      image: "https://i.pravatar.cc/150?u=marcos",
       featured: true,
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-brand font-semibold text-sm tracking-wide uppercase">Depoimentos</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2">
-            Seja o próximo psicólogo<br/>a otimizar sua rotina!
+    <section className="py-24 bg-white relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <span className="text-brand font-bold text-sm tracking-[0.2em] uppercase bg-brand-50 px-4 py-1.5 rounded-full">Sucesso Compartilhado</span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-6 mb-4">
+            Quem usa, <span className="text-brand">aprova</span> e cresce.
           </h2>
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">Junte-se a centenas de profissionais que transformaram suas operações com a Azul 360º.</p>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t, idx) => (
             <div 
               key={idx} 
-              className={`flex flex-col md:flex-row items-center gap-6 p-8 rounded-3xl transition-transform hover:-translate-y-1 duration-300 ${
-                t.featured ? 'bg-brand text-white shadow-xl shadow-brand/20' : 'bg-slate-50 text-slate-700 border border-slate-100'
+              className={`relative flex flex-col p-10 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 ${
+                t.featured ? 'bg-brand text-white shadow-2xl shadow-brand/30' : 'bg-slate-50 text-slate-700 border border-slate-100'
               }`}
             >
-              <div className="shrink-0">
+              <Quote size={40} className={`mb-6 opacity-20 ${t.featured ? 'text-white' : 'text-brand'}`} />
+              
+              <div className="flex text-yellow-400 mb-6">
+                {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" />)}
+              </div>
+
+              <p className={`text-lg leading-relaxed mb-8 flex-1 italic ${t.featured ? 'font-medium' : 'font-normal'}`}>
+                "{t.text}"
+              </p>
+
+              <div className="flex items-center gap-4 border-t pt-8 border-white/10">
                  <img 
                    src={t.image} 
                    alt={t.author} 
-                   className={`w-20 h-20 rounded-full object-cover border-4 ${t.featured ? 'border-brand-dark' : 'border-white'}`} 
+                   className={`w-14 h-14 rounded-2xl object-cover border-2 ${t.featured ? 'border-brand-light' : 'border-white'}`} 
                  />
-              </div>
-              <div className="flex-1">
-                 <Quote size={24} className={`mb-3 ${t.featured ? 'text-brand-100' : 'text-brand'}`} />
-                 <p className={`text-sm md:text-base leading-relaxed mb-4 ${t.featured ? 'font-medium' : 'font-normal'}`}>"{t.text}"</p>
                  <div>
-                    <h4 className="font-bold text-sm">{t.author}</h4>
-                    <span className={`text-xs ${t.featured ? 'text-brand-100' : 'text-slate-500'}`}>{t.role}</span>
+                    <h4 className="font-bold text-base">{t.author}</h4>
+                    <span className={`text-xs uppercase tracking-wider font-bold ${t.featured ? 'text-blue-100' : 'text-slate-400'}`}>{t.role}</span>
                  </div>
               </div>
             </div>
