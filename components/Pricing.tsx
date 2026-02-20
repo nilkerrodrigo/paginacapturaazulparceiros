@@ -20,9 +20,10 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const phoneNumber = "5579991483823";
+    const phoneNumber = "557996822457";
     
-    const message = `*Nova Solicitação do Site Azul 360º*\n\n` +
+    const message = `Lead Azul 360 Parceiros\n\n` +
+      `*Nova Solicitação do Site Azul 360º*\n\n` +
       `*Nome:* ${formData.nome}\n` +
       `*Email:* ${formData.email}\n` +
       `*Telefone:* ${formData.telefone}\n` +
